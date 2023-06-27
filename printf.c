@@ -11,7 +11,9 @@ int _printf(const char *format, ...)
 	ops handle[] = {
 		{"%s", handle_string},
 		{"%c", handle_char},
-		{"%%", handle_percent}
+		{"%%", handle_percent},
+		{"%i", handle_int},
+		{"%d", handle_decimal}
 	};
 
 	i = 0, length = 0;
@@ -22,7 +24,7 @@ int _printf(const char *format, ...)
 	while (format[i] != '\0')
 	{
 		j = 0, check = 1;
-		while (j < 3 && format[i] != '\0')
+		while (j < 5 && format[i] != '\0')
 		{
 			if (format[i] == handle[j].str[0] && format[i + 1] == handle[j].str[1])
 			{
