@@ -12,8 +12,8 @@ int _printf(const char *format, ...)
 		{"%s", handle_string},
 		{"%c", handle_char},
 		{"%%", handle_percent},
-		{"%i", handle_int},
-		{"%d", handle_decimal}
+		{"%d", handle_decimal},
+		{"%i", handle_int}
 	};
 
 	i = 0, length = 0;

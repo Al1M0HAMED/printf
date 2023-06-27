@@ -6,8 +6,7 @@
  */
 int handle_decimal(va_list list)
 {
-	int length = 1, num, i = 1;
-	int out[11];
+	int length = 1, s = 1, sum = 0, n, num, out;
 
 	num = va_arg(list, int);
 	if (num < 0)
@@ -16,19 +15,22 @@ int handle_decimal(va_list list)
 		num = num * -1;
 		length++;
 	}
-	out[0] = (num % 10) + '0';
-	while (num / 10)
+	n = num;
+	while (n / 10 != 0)
+		n = n / 10, s = s * 10;
+	while (s >= 1)
 	{
-		num = num / 10;
-		out[i] = (num % 10) + '0';
-		i++;
+		out = num % 10;
+		sum += out * s;
+		s = s / 10, num = num / 10;
 	}
-	i--;
-	while (i > 0)
+	s = (sum % 10) + '0';
+	sum = sum / 10;
+	cout(s);
+	while (sum)
 	{
-		cout(out[i]);
-		length++, i--;
+		cout((sum % 10) + '0');
+		sum = sum / 10, length++;
 	}
-	cout(out[0]);
 	return (length);
 }
