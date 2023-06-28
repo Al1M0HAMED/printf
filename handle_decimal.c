@@ -16,20 +16,20 @@ int handle_decimal(va_list list)
 		num = -num;
 		length++;
 	}
-	out[0] = (num % 10) + '0';
+	out[0] = num % 10;
 	num = num / 10;
 	while (num)
 	{
-		out[i] = (num % 10) + '0';
+		out[i] = num % 10;
 		num = num / 10;
 		i++;
 	}
 	i--;
 	while (i > 0)
 	{
-		cout(out[i]);
+		cout(out[i] + '0');
 		length++, i--;
 	}
-	cout(out[0]);
+	cout(out[0] + '0');
 	return (length);
 }
