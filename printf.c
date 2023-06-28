@@ -13,7 +13,8 @@ int _printf(const char *format, ...)
 		{"%c", handle_char},
 		{"%%", handle_percent},
 		{"%d", handle_decimal},
-		{"%i", handle_int}
+		{"%i", handle_int},
+		{"%r", handle_rev_string}
 	};
 
 	i = 0, length = 0;
@@ -24,7 +25,7 @@ int _printf(const char *format, ...)
 	while (format[i] != '\0')
 	{
 		j = 0, check = 1;
-		while (j < 5 && format[i] != '\0')
+		while (j < 6 && format[i] != '\0')
 		{
 			if (format[i] == handle[j].str[0] && format[i + 1] == handle[j].str[1])
 			{
