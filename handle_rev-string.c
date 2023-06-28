@@ -13,12 +13,11 @@ int handle_rev_string(va_list list)
 	str = va_arg(list, char*);
 	if (str == NULL)
 		str = ")Null(";
-	rev_string(str);
-	i = 0;
-	while (i < _strlen(str))
+	i = _strlen(str);
+	while (i > 0)
 	{
 		cout(str[i]);
-		i++;
+		i--;
 	}
 	return (_strlen(str));
 }
