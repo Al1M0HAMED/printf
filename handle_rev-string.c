@@ -14,7 +14,7 @@ int handle_rev_string(va_list list)
 	if (str == NULL)
 		str = ")Null(";
 	i = _strlen(str);
-	while (i > 0)
+	while (i >= 0)
 	{
 		cout(str[i]);
 		i--;
