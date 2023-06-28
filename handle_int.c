@@ -7,7 +7,7 @@
 int handle_int(va_list list)
 {
 	int length = 1, num, i = 1;
-	int out[11];
+	int out[14];
 
 	num = va_arg(list, int);
 	if (num < 0)
@@ -17,7 +17,7 @@ int handle_int(va_list list)
 		length++;
 	}
 	out[0] = (num % 10) + '0';
-	while (num / 10)
+	while (num / 10 != 0)
 	{
 		num = num / 10;
 		out[i] = (num % 10) + '0';
