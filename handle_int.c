@@ -13,7 +13,7 @@ int handle_int(va_list list)
 	if (num < 0)
 	{
 		cout('-');
-		num = num * -1;
+		num = -num;
 		length++;
 	}
 	out[0] = (num % 10) + '0';
