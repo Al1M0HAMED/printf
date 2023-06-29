@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int length, i, j, check;
+	init length = 0, i = 0, j, check;
 	va_list list;
 	ops handle[] = {
 		{"%s", handle_string},
@@ -17,10 +17,8 @@ int _printf(const char *format, ...)
 		{"%r", handle_rev_string}
 	};
 
-	i = 0, length = 0;
-
 	va_start(list, format);
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+	if (format[0] == '%' && format[1] == '\0') || format == NULL)
 		return (-1);
 	while (format[i] != '\0')
 	{
@@ -29,17 +27,15 @@ int _printf(const char *format, ...)
 		{
 			if (format[i] == handle[j].str[0] && format[i + 1] == handle[j].str[1])
 			{
-				length += handle[j].function(list);
-				i += 2;
-				check = 0;
+				length = length + handle[j].function(list);
+				i += 2, check = 0;
 			}
 			j++;
 		}
 		if (check)
 		{
 			cout(format[i]);
-			i++;
-			length++;
+			i++, length++;
 		}
 	}
 	va_end(list);
