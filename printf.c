@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	init length = 0, i = 0, j, check;
+	int length = 0, i = 0, j, check;
 	va_list list;
 	ops handle[] = {
 		{"%s", handle_string},
@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 	};
 
 	va_start(list, format);
-	if (format[0] == '%' && format[1] == '\0') || format == NULL)
+	if ((format[0] == '%' && format[1] == '\0') || format == NULL)
 		return (-1);
 	while (format[i] != '\0')
 	{
