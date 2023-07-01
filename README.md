@@ -102,10 +102,10 @@ Specifier                |Output                        |Examples |
 |`printf.c`|Main printf function file. Calls other functions.|`printf_(name of var).c file` |
 |`handle_percent.c`|Contains percentage print function.|`None` |
 |`handle_int.c` | Contains integer function. | `None` | 
-`printf_decimal.c` | contains decimal function. | `None` |
+`handle_decimal.c` | contains decimal function. | `None` |
 `handle_char.c` | Custom function for char data type. | `None`
 |`handle_sting.c` | Function that calls string type variable. | `None` |
-`handle-rev_srev.c` | Returns a string in reverse. | `None` |
+`handle-rev_string.c` | Returns a string in reverse. | `None` |
 `cout.c` | Custom putchar function. | `None` |
 
 
