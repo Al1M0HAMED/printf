@@ -53,7 +53,7 @@ The code must be compiled this way:
 
 As a consequence, be careful not to push any c file containing a main function in the root directory of your project (you could have a test folder containing all your tests files including main functions)
 
-The main files will include your main header file (holberton.h): **#include holberton.h**
+The main files will include your main header file (holberton.h): **#include main.h**
 
 ------------
 
