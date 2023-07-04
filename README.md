@@ -31,7 +31,7 @@ https://www.cypress.com/file/54761/download
 ------------
 
 
-write (man 2 write)
+write (man 2 write)</br>
 malloc (man 3 malloc)
 free (man 3 free)
 va_start (man 3 va_start)
